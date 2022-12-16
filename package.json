@@ -1,58 +1,37 @@
 {
-  "name": "root",
-  "description": "Library for NLU (Natural Language Understanding) done in Node.js",
+  "name": "soft-ui-pro",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^7.0.0-alpha.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-helmet": "^6.1.0",
+    "prop-types": "15.7.2"
+  },
   "scripts": {
-    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
-    "postinstall": "lerna bootstrap",
-    "lint": "eslint .",
-    "lintfix": "eslint --fix .",
-    "test": "eslint --fix . && TZ='Europe/London' jest --silent --coverage --maxWorkers=4 ."
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test --env=jsdom",
+    "eject": "craco eject"
   },
-  "author": {
-    "email": "opensource@axa.com",
-    "name": "Jesus Seijas"
+  "engines": {
+    "node": "16.x"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/axa-group/nlp.js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/axa-group/nlp.js/issues"
-  },
-  "homepage": "https://github.com/axa-group/nlp.js#readme",
-  "maintainers": [
-    {
-      "email": "opensource@axa.com",
-      "name": "Jesus Seijas"
-    }
-  ],
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "coveralls": "^3.1.0",
-    "eslint": "^7.22.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^26.0.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "https-proxy-agent": "^5.0.0",
-    "jest": "^27.3.1",
-    "lerna": "^4.0.0",
-    "prettier": "^2.2.1",
-    "supertest": "^6.1.3"
-  },
-  "jest": {
-    "verbose": true,
-    "testURL": "http://localhost/",
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "**/src/**/**.js",
-      "!./packages/lang-**/**",
-      "!./packages/python-compiler/src/python-executer.js",
-      "!./packages/express-api-server/src/public/**/**"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
-    "coverageDirectory": "coverage",
-    "testEnvironment": "node"
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
   }
 }
